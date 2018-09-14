@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Solr managed schema - automatically generated - DO NOT EDIT -->
+<schema name="default-config" version="1.6">
+  <uniqueKey>id</uniqueKey>
+  <fieldType name="binary" class="solr.BinaryField"/>
+  <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+  <fieldType name="booleans" class="solr.BoolField" sortMissingLast="true" multiValued="true"/>
+  <fieldType name="pdate" class="solr.DatePointField" docValues="true"/>
+  <fieldType name="pdates" class="solr.DatePointField" docValues="true" multiValued="true"/>
+  <fieldType name="pdouble" class="solr.DoublePointField" docValues="true"/>
+  <fieldType name="pdoubles" class="solr.DoublePointField" docValues="true" multiValued="true"/>
+  <fieldType name="pfloat" class="solr.FloatPointField" docValues="true"/>
+  <fieldType name="pfloats" class="solr.FloatPointField" docValues="true" multiValued="true"/>
+  <fieldType name="pint" class="solr.IntPointField" docValues="true"/>
+  <fieldType name="pints" class="solr.IntPointField" docValues="true" multiValued="true"/>
+  <fieldType name="plong" class="solr.LongPointField" docValues="true"/>
+  <fieldType name="plongs" class="solr.LongPointField" docValues="true" multiValued="true"/>
+  <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true"/>
+  <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100" multiValued="true">
+    <analyzer type="index">
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.StopFilterFactory" words="stopwords.txt" ignoreCase="true"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.StopFilterFactory" words="stopwords.txt" ignoreCase="true"/>
+      <filter class="solr.SynonymGraphFilterFactory" expand="true" ignoreCase="true" synonyms="synonyms.txt"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+    </analyzer>
+  </fieldType>
+  <fields>
+  <field name="Additional_company_n" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Call___C___or_Put___" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Company_name" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Contract_name" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Country" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Exchange" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Exchange_code" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Expiry_date__Julian_" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Global_ID_investment" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="ISIN_code" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Listed_Currency" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Listing_market_for_t" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Local_instrument_cod" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  
+  
+  <field name="MS_Listing_Exchange" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="MS_Extended_Support" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  
+  
+  <field name="MS_Performance_ID" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Market_specific_secu" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Market_specific_segm" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Morningstar_ID" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Original_exchange_co" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="QS_Symbol_Suffix" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Root_symbol_for_opt" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="S3076" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Security_Type" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Sedol" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Strike_price" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Symbol" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="Traded_Currency" type="text_general" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="_root_" type="string" docValues="false" indexed="true" stored="false"/>
+  <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
+  <field name="_version_" type="plong" indexed="false" stored="false"/>
+  <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
+  </fields>
+</schema>
